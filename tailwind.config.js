@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
@@ -5,6 +7,16 @@ module.exports = {
     extend: {
       fontFamily:{
         'Mulish': ['Mulish', 'serif'] 
+      },
+      colors:{
+        cyanP:{
+          500: '#06B6D4',
+          700: '#0E7490',
+          100: '#CFFAFE',
+        },
+        skyP:{
+          600: '#0284C7'
+        }
       }
     },
   },
