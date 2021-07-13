@@ -12,30 +12,33 @@
         href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
 
 <body class="font-Mulish">
 
-    <header class="flex justify-center pt-10 px-10 md:p-10 md:pb-0 flex-wrap items-center">
-        <div class=" flex-1 justify-center px-3">
-            <img src="../assests/Vector.png" alt="WEBBER Logo" srcset="" class=" md:w-20">
-            <h3 class=" font-black">WEBBER</h3>
-        </div>
-        <div class=" flex-auto">
-            <ul class=" flex justify-center justify-around font-semibold items-center text-gray-700">
-                <li><a href="/dist/index.html">Overview</a></li>
-                <li><a href="/dist/pricing.html">Pricing</a></li>
-                <li><a href="/dist/caseStudies.html" class=" border-b-2 border-black pb-1">Case Studies</a></li>
-                <li><a href="/dist/pricing.html#FAQ">FAQ</a></li>
-            </ul>
-        </div>
-        <div class="flex flex-1 justify-end items-start ">
-            <button class=" px-5 py-2 bg-cyanP-100 text-cyanP-700 font-bold rounded-sm">Sign In</button>
-        </div>
+    <header x-data="{ mobileMenuOpen : false }" class="flex flex-wrap flex-row justify-between md:items-center md:space-x-4 bg-white py-6 px-6 relative">
+        <a href="#" class="block">
+            <img src="../assests/svgs/logo.svg" alt="WEBBER Logo" srcset="" class=" md:w-20">
+            <!-- <span class="sr-only">themes.dev</span>
+            <img class="h-6 md:h-8" src="/images/themesdev-logo-dark.svg" alt="Themes.dev Logo" title="Themes.dev Logo"> -->
+        </a>
+        <button @click="mobileMenuOpen = !mobileMenuOpen" class="inline-block md:hidden w-8 h-8 bg-gray-200 text-gray-600 p-1">
+          <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+        </button>
+        <nav class="absolute md:space-x-16 md:relative top-16 left-0 md:top-0 z-20 md:flex flex-col md:flex-row font-semibold w-full justify-center md:w-auto bg-white shadow-md rounded-lg md:rounded-none md:shadow-none md:bg-transparent p-6 pt-0 md:p-0"
+            :class="{ 'flex' : mobileMenuOpen , 'hidden' : !mobileMenuOpen}"  @click.away="mobileMenuOpen = false"
+            >
+                <a href="/dist/index.html" class="block py-2 text-gray-700 hover:underline">Overview</a>
+                <a href="/dist/pricing.html" class="block py-2 text-gray-700 hover:underline">Pricing</a>
+                <a href="/dist/caseStudies.html" class="block py-2 text-gray-700 hover:underline">Case Studies</a>
+                <a href="/dist/pricing.html#FAQ" class="block py-2 text-gray-700 hover:underline">FAQ</a>
+                <button class=" px-5 py-1 bg-cyanP-100 text-cyanP-700 font-bold rounded-sm">Sign In</button>
+        </nav>
     </header>
 
 
-    <div class=" grid grid-cols-1 px-6 md:pt-4 md:py-10 md:grid-cols-3 md:px-36 md:pt-16">
+    <div class=" grid grid-cols-1 px-6 md:pt-4 md:py-10 md:grid-cols-3 md:px-12 lg:px-36 md:pt-16">
         <div class=" col-span-1 py-20 md:col-span-2 md:py-20">
             <p class=" text-gray-700 text-sm">Kanban Software</p>
             <h2 class=" text-5xl font-extrabold text-gray-800 my-2">Trello x Webber</h2>
@@ -60,8 +63,8 @@
     </div>
 
     <!-- w-9/12 -->
-    <div class=" grid grid-cols-1 px-10 md:grid-cols-3 md:px-36 ">
-        <div class=" md:col-span-2 md:pr-52">
+    <div class=" grid grid-cols-1 px-10 md:grid-cols-3 md:px-12 lg:px-36 ">
+        <div class=" md:col-span-2 md:pr-24 lg:pr-52">
             <h3 class=" text-3xl font-bold">The details</h3>
             <p class=" my-7 ">
                 It is a long established fact that a reader will be distracted by the readable.
@@ -84,14 +87,14 @@
                 alteration in some form, by injected humour, or
                 randomised words which don't look.
             </p>
-            <button class=" py-2 px-5 text-cyanP-700 bg-white rounded-sm font-semibold mr-3">Start trail</button>
-            <button class=" py-2 px-6 border-white border-2 rounded-sm">Contact sales</button>
+            <button class=" mt-2 py-2 px-5 text-cyanP-700 bg-white rounded-sm font-semibold mr-3">Start trail</button>
+            <button class=" mt-2 py-2 px-6 border-white border-2 rounded-sm">Contact sales</button>
         </div>
 
     </div>
 
-    <div class=" grid grid-cols-1 px-10 pt-10 md:grid-cols-3 md:px-36 ">
-        <div class=" md:col-span-2 md:pr-52">
+    <div class=" grid grid-cols-1 px-10 pt-10 md:grid-cols-3 md:px-12 lg:px-36 ">
+        <div class=" md:col-span-2 md:pr-24 lg:pr-52">
             <img class=" mb-7" src="../assests/CaseStudiesImage/img7.png" alt="Case Studies Image">
 
             <h4>Breakdown of milestones</h4>
@@ -125,7 +128,7 @@
     <div class=" px-10 py-5 md:px-36 md:py-16 bg-gray-100 mt-10">
         <h3 class=" text-2xl font-bold mt-10 md:mb-10">More Case Studies</h3>
 
-        <div class=" grid gird-cols-1 md:grid-cols-4 md:gap-20">
+        <div class=" grid gird-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-20">
             <div class="pt-10">
                 <img src="../assests/CaseStudiesImage/img4.png" alt="Swiss Airline Featured Image">
                 <p class=" text-gray-400 font-normal text-sm my-3 mb-1">Kanban software</p>

@@ -11,34 +11,33 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-
-    <style>
-
-    </style>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
 </head>
 <body class=" font-Mulish">
-    <header class="flex justify-center pt-10 px-10 md:p-10 md:pb-0 flex-wrap items-center">
-        <div class=" flex-1 justify-center px-3">
-            <img src="../assests/Vector.png" alt="WEBBER Logo" srcset="" class=" md:w-20">
-            <h3 class=" font-black">WEBBER</h3>
-        </div>
-        <div class=" flex-auto">
-            <ul class=" flex justify-center justify-around font-semibold items-center text-gray-700">
-                <li><a href="/dist/index.html"  class=" border-b-2 border-black pb-1">Overview</a></li>
-                <li><a href="/dist/pricing.html">Pricing</a></li>
-                <li><a href="/dist/caseStudies.html">Case Studies</a></li>
-                <li><a href="/dist/pricing.html#FAQ">FAQ</a></li>
-            </ul>
-        </div>
-        <div class="flex flex-1 justify-end items-start ">
-            <button class=" px-5 py-2 bg-cyanP-100 text-cyanP-700 font-bold rounded-sm">Sign In</button>
-        </div>
+
+    <header x-data="{ mobileMenuOpen : false }" class="flex flex-wrap flex-row justify-between md:items-center md:space-x-4 bg-white py-6 px-6 relative">
+        <a href="#" class="block flex-1">
+            <img src="../assests/svgs/logo.svg" alt="WEBBER Logo" srcset="" class=" w-12 md:w-20">
+            <!-- <span class="sr-only">themes.dev</span>
+            <img class="h-6 md:h-8" src="/images/themesdev-logo-dark.svg" alt="Themes.dev Logo" title="Themes.dev Logo"> -->
+        </a>
+        <button @click="mobileMenuOpen = !mobileMenuOpen" class="inline-block md:hidden w-8 h-8 bg-gray-200 text-gray-600 p-1">
+          <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+        </button>
+        <nav class="absolute md:space-x-16 md:relative top-20 left-0 md:top-0 z-20 md:flex flex-col md:flex-row font-semibold w-full justify-start md:w-auto bg-white shadow-md rounded-lg md:rounded-none md:shadow-none md:bg-transparent p-6 pt-0 md:p-0 flex-auto"
+            :class="{ 'flex' : mobileMenuOpen , 'hidden' : !mobileMenuOpen}"  @click.away="mobileMenuOpen = false"
+            >
+                <a href="/dist/index.html" class="block py-2 text-gray-700 hover:underline">Overview</a>
+                <a href="/dist/pricing.html" class="block py-2 text-gray-700 hover:underline">Pricing</a>
+                <a href="/dist/caseStudies.html" class="block py-2 text-gray-700 hover:underline">Case Studies</a>
+                <a href="/dist/pricing.html#FAQ" class="block py-2 text-gray-700 hover:underline">FAQ</a>
+                <button class=" md:absolute md:right-0 h-full md:ml-auto px-5 py-1 bg-cyanP-100 text-cyanP-700 font-bold rounded-sm">Sign In</button>
+        </nav>
     </header>
     
     <div class=" text-center mb-12 md:my-28">
-        <h1 class="text-gray-800 text-5xl md:text-8xl font-extrabold text-center mt-10 m-auto md:w-6/12" >DEPLOY YOUR FROND-END</h1>
+        <h1 class="text-gray-800 text-5xl md:text-6xl lg:text-8xl font-extrabold text-center  mt-10  m-auto md:w-8/12 lg:w-8/12 xl:w-6/12" >DEPLOY YOUR FROND-END</h1>
         <div class="mt-10">
             <button class=" bg-gradient-to-r from-cyanP-500 to-cyanP-700 text-white py-2 px-4 mr-4 rounded-sm" >Get Started</button>
             <button class=" text-white bg-cyanP-100 text-cyanP-700 py-2 px-4 rounded-sm" >Learn More</button>
@@ -46,13 +45,13 @@
     </div>
 
     <div class=" text-center m-auto">
-        <div class=" bg-gradient-to-t from-cyanP-500 to-cyanP-700  h-36 w-5/6 md:h-72 m-auto mt-10 mb-10"></div>
-        <img src="../assests/svgs/browser.svg" alt="Browser Image" srcset="" class=" m-auto -mt-32 md:-mt-56 drop-shadow-lg w-96 md:w-max">
+        <div class=" bg-gradient-to-t from-cyanP-500 to-cyanP-700  h-36 w-5/6 md:h-52 lg:h-72 m-auto mt-10 mb-10"></div>
+        <img src="../assests/svgs/browser.svg" alt="Browser Image" srcset="" class=" m-auto -mt-32 md:-mt-56 drop-shadow-lg w-96 md:w-96 lg:w-max">
     </div>
 
-    <div class=" md:p-32 mt-20 mb-10 pt-10">
+    <div class=" md:p-14 lg:p-32 mt-20 mb-10 pt-10">
         <h2 class=" font-black text-5xl color-gray-800 text-center">Tailor-made features</h2>
-        <div class=" grid grid-cols-1 md:grid-cols-3 mt-24 gap-x-1 gap-y-12 px-16">
+        <div class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-24 gap-x-1 gap-y-12 lg:px-16">
             <div class=" text-center">
                 <div class="flex justify-center mb-7">
                     <img src="../assests/svgs/01.svg" alt="" srcset="">
@@ -103,8 +102,8 @@
         <h2 class=" font-black text-5xl color-gray-800 text-center my-14 md:mb-0">How It works</h2>
 
         <div class=" grid grid-cols-1 md:grid-cols-2 gap-4 py-20 px-10 pt-1">
-            <div class="flex items-center">
-                <div class=" p-10 md:p-20">
+            <div class="flex items-center order-last lg:order-first ">
+                <div class=" md:p-10 lg:p-20">
                     <h1 class=" text-3xl md:text-5xl text-gray-800 font-extrabold">Sign Up</h1>
                     <p class="mt-5 mb-5 text-gray-600">Loream ipsim dolor sit amet, consectetur adipiscing elit. Erat vitae a consectetur dolor. Elementum hbitant urna, ac quis laoreet urna purus. Aliguam at esl vel auctor rhoncus et. Sit ac enim, malesuade mattis. Dignissim nibh augur posuer</p>
     
@@ -116,7 +115,7 @@
                     <div class=" clear-both"></div>
                 </div>
             </div>
-            <div class=" flex justify-center md:justify-end md:pr-20 md:items-center">
+            <div class=" flex justify-center md:justify-end md:pr-20 md:items-center order-first">
                 <img src="../assests/svgs/HIW.svg" alt="How it works" class=" h-10/12 w-10/12 md:h-3/4 md:w-3/4">
             </div>
         </div>
@@ -124,27 +123,22 @@
     </div>
 
 
-    <div class=" bg-gradient-to-r from-cyanP-500 via-cyanP-700 to-skyP-600 p-10 md:p-14 mb-20">
+    <div class=" bg-gradient-to-r from-cyanP-500 via-cyanP-700 to-skyP-600 p-10 p-2 md:p-10 lg:p-14 mb-20">
         <div class=" grid grid-cols-1 md:grid-cols-4 md:gap-4">
-            <div class="flex">
+            <div class="flex ">
                 <cite class="flex items-center justify-end">
                     <img class="w-12 mr-4 rounded-full bg-neutral-500" src="../assests/Picture.png" alt="Quote Avatar">
-                    <div class="">
+                    <div class=" flex justify-end">
                         <span class="mb-1 text-sm font-bold text-white">
                             Jenny Wilson
                         </span>
-                        
                     </div>
                 </cite>
             </div>
-            <div class=" col-span-3">
-                <blockquote class=" relative py-4 md:p-4 text-xl quote">
-                    <!-- <div class=" stylistic-quote-mark" aria-hidden="true">
-                        &ldquo;
-                    </div> -->
-                    <p class=" text-white font-normal  md:w-5/6 ml-5" >Eos enim quo est necessitatibus nobis consectetur rerum qui dolores. Quia commodi similique est sed aut. Aspernatur voluptas nisi tenetur voluptates iusto debitis ex voluptatem odit. Repudiandae et et quod et. Enim sit delectus numquam. Molestiae aut voluptatem. Quia commodi similique est sed aut. Aspernatur voluptas nisi tenetur voluptates iusto debitis.</p>
+            <div class=" col-span-3 order-first md:order-last lg:order-last">
+                <blockquote class=" relative text-lg py-4 lg:p-4 lg:text-xl quote">
+                    <p class=" text-white font-normal sm:w-9/12 md:w-5/6 lg:w-5/6 ml-auto" >Eos enim quo est necessitatibus nobis consectetur rerum qui dolores. Quia commodi similique est sed aut. Aspernatur voluptas nisi tenetur voluptates iusto debitis ex voluptatem odit. Repudiandae et et quod et. Enim sit delectus numquam. Molestiae aut voluptatem. Quia commodi similique est sed aut. Aspernatur voluptas nisi tenetur voluptates iusto debitis.</p>
                 </blockquote>
-                
             </div>
         </div>
     </div>
@@ -178,17 +172,16 @@
                 <img src="../assests/Google-logo.png" alt="Google Logo" srcset="">
             </div>
         </div>
-
     </div>
 
 
 
-    <div class="bg-gradient-to-br from-cyanP-500 via-cyanP-700 to-skyP-600 md:bg-none md:h-96 mt-10 mb-10 pb-10 md:pb-0">
-        <div class=" bg-none md:bg-gradient-to-br from-cyanP-500 via-cyanP-700 to-skyP-600 h-4/5 text-white text-center pt-10">
-            <h1 class=" text-5xl md:text-6xl font-black" >By the numbers</h1>
+    <div class="bg-gradient-to-br from-cyanP-500 via-cyanP-700 to-skyP-600 lg:bg-none md:h-96 mt-10 mb-10 pb-10 md:pb-0">
+        <div class=" bg-none lg:bg-gradient-to-br from-cyanP-500 via-cyanP-700 to-skyP-600 h-4/5 text-white text-center pt-10">
+            <h1 class=" text-3xl md:text-5xl lg:text-6xl font-black" >By the numbers</h1>
             <p class=" my-4 md:mt-6">5 years, consistent quality and you get results. No matter what</p>
         </div>
-        <div class=" grid grid-cols-2 md:grid-cols-4 px-10 md:px-36 gap-3 md:gap-10 md:-mt-20 bg-cyanP-600 ">
+        <div class=" grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 px-10 md:px-36 gap-3 md:gap-10 md:-mt-20 bg-cyanP-600 ">
             <div class=" bg-white text-center rounded-2xl shadow p-10 flex flex-col justify-center items-center">
                 <h1 class=" text-5xl font-bold">40+</h1>
                 <p class=" text-gray-500 text-1xl font-medium mt-3">Happy Clients</p>
@@ -208,13 +201,13 @@
         </div>
     </div>
 
-    <div class=" text-center md:pt-20 my-20">
-        <h1 class=" text-4xl font-extrabold md:font-black text-gray-800 px-3 md:px-0 md:w-2/4 m-auto" >Build the next big thing and ship to market faster</h1>
+    <div class=" text-center sm:pt-44 md:pt-52 lg:pt-20 my-20">
+        <h1 class=" text-3xl md:text-4xl font-extrabold md:font-extrabold lg:font-black text-gray-800 px-3 md:px-0 md:w-3/5 lg:w-2/4 m-auto" >Build the next big thing and ship to market faster</h1>
         <button class="bg-gradient-to-r from-cyanP-500 to-cyanP-700 text-white bg-blue-600 py-2 px-4 mr-4 rounded-sm mt-9" >Download Now</button>
     </div>
 
     
-    <footer class="grid grid-cols-1 gap-2 md:grid-cols-6 gap-2 h-auto px-10 py-5 md:px-20 md:py-16 pb-5 bg-gray-100">
+    <footer class="grid grid-cols-1 gap-2 md:grid-cols-4 lg:grid-cols-6 gap-2 h-auto px-10 py-5 md:px-20 md:py-16 pb-5 bg-gray-100">
         <div class=" col-span-2 p-5">
             <img src="../assests/Vector.png" alt="WEBBER Logo" srcset="" class=" w-20">
             <h3 class=" font-bold ml-2">WEBBER</h3>
@@ -227,7 +220,7 @@
             </div>
             
         </div>
-        <div class=" text-gray-800 p-5">
+        <div class=" col-span-1 text-gray-800 p-5">
             <h3 class=" font-medium text-xl">Company</h3>
             <ul class="mt-5" >
                 <li class="mb-3" >About us</li>
@@ -237,7 +230,7 @@
                 <li class="mb-3">Testimonials</li>
             </ul>
         </div>
-        <div class=" text-gray-800 p-5">
+        <div class=" col-span-1 text-gray-800 p-5">
             <h3 class=" font-medium text-xl">Support</h3>
             <ul class="mt-5">
                 <li class=" mb-3">Help center</li>
