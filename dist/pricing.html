@@ -17,27 +17,27 @@
 <body class=" font-Mulish">
 
     <header x-data="{ mobileMenuOpen : false }" class="flex flex-wrap flex-row justify-between md:items-center md:space-x-4 bg-white py-6 px-6 relative">
-        <a href="#" class="block">
-            <img src="../assests/svgs/logo.svg" alt="WEBBER Logo" srcset="" class=" md:w-20">
+        <a href="#" class="block flex-1">
+            <img src="../assests/svgs/logo.svg" alt="WEBBER Logo" srcset="" class=" w-12 md:w-20">
             <!-- <span class="sr-only">themes.dev</span>
             <img class="h-6 md:h-8" src="/images/themesdev-logo-dark.svg" alt="Themes.dev Logo" title="Themes.dev Logo"> -->
         </a>
         <button @click="mobileMenuOpen = !mobileMenuOpen" class="inline-block md:hidden w-8 h-8 bg-gray-200 text-gray-600 p-1">
           <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
         </button>
-        <nav class="absolute md:space-x-16 md:relative top-16 left-0 md:top-0 z-20 md:flex flex-col md:flex-row font-semibold w-full justify-center md:w-auto bg-white shadow-md rounded-lg md:rounded-none md:shadow-none md:bg-transparent p-6 pt-0 md:p-0"
+        <nav class="absolute md:space-x-16 md:relative top-20 left-0 md:top-0 z-20 md:flex flex-col md:flex-row font-semibold w-full justify-start md:w-auto bg-white shadow-md rounded-lg md:rounded-none md:shadow-none md:bg-transparent p-6 pt-0 md:p-0 flex-auto"
             :class="{ 'flex' : mobileMenuOpen , 'hidden' : !mobileMenuOpen}"  @click.away="mobileMenuOpen = false"
             >
                 <a href="/dist/index.html" class="block py-2 text-gray-700 hover:underline">Overview</a>
                 <a href="/dist/pricing.html" class="block py-2 text-gray-700 hover:underline">Pricing</a>
                 <a href="/dist/caseStudies.html" class="block py-2 text-gray-700 hover:underline">Case Studies</a>
                 <a href="/dist/pricing.html#FAQ" class="block py-2 text-gray-700 hover:underline">FAQ</a>
-                <button class=" px-5 py-1 bg-cyanP-100 text-cyanP-700 font-bold rounded-sm">Sign In</button>
+                <button class=" md:absolute md:right-0 h-full md:ml-auto px-5 py-1 bg-cyanP-100 text-cyanP-700 font-bold rounded-sm">Sign In</button>
         </nav>
     </header>
     
     <div class=" text-center my-20 md:mb-5">
-        <h1 class=" text-5xl md:text-8xl font-black text-gray-800">SIMPLE PRICING</h1>
+        <h1 class=" text-4xl md:text-5xl lg:text-8xl font-black text-gray-800">SIMPLE PRICING</h1>
         <p class=" text-gray-600 w-9/12 md:w-2/5 m-auto mt-10">
             No contracts. No surprise fees. Register now or try out the Webber free trial so you're absolutely sure that it's right fir for your frontend team
         </p>
@@ -50,7 +50,7 @@
 
 
     <div class=" grid grid-cols-2 my-10 md:flex md:flex-row text-center px-5 md:p-24 md:pt-5 md:justify-center md:justify-around pt-0">
-        <div class=" text-left pt-10 pl-5 md:p-10 flex-none">
+        <div class=" text-left pt-10 lg:pl-5 md:pl-5 pl-0 md:p-10 flex-none">
             <ul class=" leading-10">
                 <li class=" mb-5">&nbsp;</li>
                 <li class=" mb-5">&nbsp;</li>
@@ -64,7 +64,7 @@
                 <li>Satisfaction guaranteed</li>
             </ul>
         </div>
-        <div class=" p-10 flex-1 flex-none hover:shadow-2xl duration-500">
+        <div class=" p-5 pt-10 flex-1 flex-none hover:shadow-2xl duration-500">
             <ul class=" leading-10">
                 <li class=" text-gray-600 font-bold text-2xl mb-5">Starter</li>
                 <li class=" text-gray-600 text-sm mb-5"><span class=" text-gray-800 text-4xl font-extrabold">$20</span>/month</li>
@@ -80,7 +80,7 @@
             </ul>
         </div>
 
-        <div class=" text-left pt-10 pl-5 md:p-10 flex-none md:hidden">
+        <div class=" text-left pt-10 lg:pl-5 md:pl-5 pl-0  md:p-10 flex-none md:hidden">
             <ul class=" leading-10">
                 <li class=" mb-5">&nbsp;</li>
                 <li class=" mb-5">&nbsp;</li>
@@ -95,7 +95,7 @@
             </ul>
         </div>
 
-        <div class=" p-10 flex-1 flex-none hover:shadow-2xl duration-500">
+        <div class=" p-5 pt-10 flex-1 flex-none hover:shadow-2xl duration-500">
             <ul class=" leading-10">
                 <li class=" text-cyanP-700 font-bold text-2xl mb-5">Pro</li>
                 <li class=" text-gray-600 text- mb-5"><span class=" text-gray-800 text-4xl font-extrabold">$100</span>/month</li>
@@ -111,7 +111,7 @@
             </ul>
         </div>
 
-        <div class=" text-left pt-10 pl-5 md:p-10 flex-none md:hidden">
+        <div class=" text-left pt-10 lg:pl-5 md:pl-5 pl-0  md:p-10 flex-none md:hidden">
             <ul class=" leading-10">
                 <li class=" mb-5">&nbsp;</li>
                 <li class=" mb-5">&nbsp;</li>
@@ -126,7 +126,7 @@
             </ul>
         </div>
 
-        <div class=" p-10 flex-1 flex-none hover:shadow-2xl duration-500">
+        <div class=" p-5 pt-10 flex-1 flex-none hover:shadow-2xl duration-500">
             <ul class=" leading-10">
                 <li class=" text-gray-600 font-bold text-2xl mb-5">Enterprise</li>
                 <li class=" text-gray-600 text-sm mb-5"><span class=" text-gray-800 text-4xl font-extrabold">$200</span>/month</li>
@@ -145,8 +145,8 @@
 
 
     <div id="FAQ" class=" px-10 pt-10 md:p-14 bg-gray-100">
-        <h2 class=" text-5xl font-black text-center text-gray-800" >Frequently asked question</h2>
-        <div class=" grid grid-cols-1 mt-10 p-10 px-4  md:grid-cols-2 md:px-14">
+        <h2 class=" text-4xl md:text-5xl  lg:text-5xl font-black text-center text-gray-800" >Frequently asked question</h2>
+        <div class=" grid grid-cols-1 mt-10 p-10 px-4  lg:grid-cols-2 md:px-14">
             <div class=" mb-16">
                 <h3 class=" text-2xl font-bold text-gray-800 mb-3" >How do I use the webber for 3+ members?</h3>
                 <p class=" text-gray-600 md:w-4/5" >Magnam reprehenderit quisquam corporis sunt ratione. Non magnam et. Suscipit quia et aspernatur officiis quo. Officia sed eaque enim doloribus quisquam mollitia nihil.</p>
@@ -173,17 +173,16 @@
                 <h3 class=" text-2xl font-bold text-gray-800 mb-3">How do I use the webber for 3+ members?</h3>
                 <p class=" text-gray-600 md:w-4/5">Magnam reprehenderit quisquam corporis sunt ratione. Non magnam et. Suscipit quia et aspernatur officiis quo. Officia sed eaque enim doloribus quisquam mollitia nihil.</p>
             </div>
-
         </div>
     </div>
 
     <div class=" bg-gradient-to-r from-cyanP-500 via-cyanP-700 to-skyP-600 text-center p-11 md:p-16">
-        <h1 class=" text-4xl font-extrabold md:text-5xl md:font-black text-white mb-3" >Get results, no matter what</h1>
-        <p class=" md:w-2/4 m-auto text-white font-medium">Start your free trail today, you get all the pro features for 1 month for you and your team. If you think its not for you can easily unsubscribe</p>
+        <h1 class=" text-3xl font-extrabold md:text-5xl md:font-black text-white mb-3" >Get results, no matter what</h1>
+        <p class=" sm:w-9/12 md:w-8/12 lg:w-2/4 m-auto text-white font-medium">Start your free trail today, you get all the pro features for 1 month for you and your team. If you think its not for you can easily unsubscribe</p>
         <button class=" mt-7 hover:text-white border-2 hover:border-white hover:bg-cyanP-700 duration-500 text-cyanP-700 bg-white px-6 py-3 rounded-sm">Start free trail</button>
     </div>
 
-    <footer class="grid grid-cols-1 gap-2 md:grid-cols-6 gap-2 h-auto px-10 py-5 md:px-20 md:py-16 pb-5 bg-gray-100">
+    <footer class="grid grid-cols-1 gap-2 md:grid-cols-4 lg:grid-cols-6 gap-2 h-auto px-10 py-5 md:px-20 md:py-16 pb-5 bg-gray-100">
         <div class=" col-span-2 p-5">
             <img src="../assests/Vector.png" alt="WEBBER Logo" srcset="" class=" w-20">
             <h3 class=" font-bold ml-2">WEBBER</h3>
@@ -196,7 +195,7 @@
             </div>
             
         </div>
-        <div class=" text-gray-800 p-5">
+        <div class=" col-span-1 text-gray-800 p-5">
             <h3 class=" font-medium text-xl">Company</h3>
             <ul class="mt-5" >
                 <li class="mb-3" >About us</li>
@@ -206,7 +205,7 @@
                 <li class="mb-3">Testimonials</li>
             </ul>
         </div>
-        <div class=" text-gray-800 p-5">
+        <div class=" col-span-1 text-gray-800 p-5">
             <h3 class=" font-medium text-xl">Support</h3>
             <ul class="mt-5">
                 <li class=" mb-3">Help center</li>
@@ -219,11 +218,9 @@
         <div class=" col-span-2 p-5">
             <h3 class=" font-medium text-xl">Get Updates and more</h3>
             <div class=" flex items-end">
-                <input class="mt-5 p-1 ml-5 pl-2 bg-white rounded-sm w-2/3" type="email" placeholder="Your Email address"> 
+                <input class="mt-5 p-1 pl-2 bg-white rounded-sm w-2/3" type="email" placeholder="Your Email address"> 
                 <button class=" bg-gradient-to-br from-cyanP-500 via-cyanP-700 to-skyP-600 px-2 py-1" ><img src="../assests/svgs/arrow-Email.svg" alt=""></button>
             </div>
-            
-
         </div>
     </footer>
 
